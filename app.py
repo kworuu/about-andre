@@ -12,6 +12,15 @@ YEAR = "3rd Year"
 TAGLINE = "Aspiring Software engineer who loves turning messy data into useful tools."  
 EMAIL = "andrecamasura144@gmail.com"                  
 PHOTO_PATH = "profile.png" 
+ABOUT_PHOTO_PATH = "about.jpg"
+
+SOCIALS = {
+    "GitHub": "https://github.com/kworuu",
+    "LinkedIn": "https://www.linkedin.com/in/andre-martin-camasura-4862b2347/",   
+    "Email": "mailto:andrecamasura144@gmail.com",
+    "Facebook": "https://www.facebook.com/andre.camasura",  
+    "Instagram": "https://www.instagram.com/camasuuura/",  
+}
 
 SHORT_BIO = (
     "Hello, I'm Andre Martin B. Camasura, a 3rd-year BS Computer Science student at Cebu Institute of Technology University. I have a strong passion for software engineering and data analysis, and I'm always eager to learn new technologies and improve my skills. This portfolio showcases my journey, skills, projects,"
@@ -100,9 +109,9 @@ def placeholder_photo(size=300):
     return img.astype(np.uint8)
 
 
-def show_photo():
-    if os.path.exists(PHOTO_PATH):
-        st.image(PHOTO_PATH, caption=NAME, width="stretch")
+def show_photo(path=PHOTO_PATH):
+    if os.path.exists(path):
+        st.image(path, caption=NAME, width="stretch")
     else:
         st.image(placeholder_photo(), caption="Stand-in photo (add profile.jpg)",
                  width="stretch")
@@ -112,10 +121,14 @@ def show_photo():
 # SIDEBAR
 # ---------------------------------------------------------------------------
 with st.sidebar:
-    show_photo()
+    show_photo(PHOTO_PATH)
     st.markdown(f"### {NAME}")
     st.caption(f"{PROGRAM} | {YEAR}")
     st.caption(f"{SECTION}")
+
+    st.subheader("Links")
+    for label, url in SOCIALS.items():
+        st.link_button(label, url, width="stretch")
     st.divider()
 
     st.subheader("Page options")
@@ -156,7 +169,7 @@ tab_about, tab_auto, tab_skills, tab_projects, tab_contact = st.tabs(
 with tab_about:
     left, right = st.columns([1, 2], gap="large")
     with left:
-        show_photo()
+        show_photo(ABOUT_PHOTO_PATH)
     with right:
         st.header("About me")
         st.write(SHORT_BIO)
