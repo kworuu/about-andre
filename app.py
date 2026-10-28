@@ -27,7 +27,7 @@ SHORT_BIO = (
 )
 
 BACKGROUND = (
-    "I was born at a very young age and I was raised in Cebu City, here in Tisa. Growing up, I wasn't very tech savy, the only exposre I had to tech or computer science was those Disney shows where they say 'they're past the fire wall', or 'broken the mainframe'. "
+    "I was born at a very young age and I was raised in Cebu City, here in Tisa. Growing up, I wasn't very tech savy, the only exposure I had to tech or computer science was those Disney shows where they say 'they're past the fire wall', or 'broken the mainframe'. "
     "I became interested in the field when I had a Java programming class in grade 10, I really liked it, I thought 'maybe i don't need to take engineering and be away from the difficult math' (man, little did I know). Now, I am in my 3rd year, and I still have a long way to go, but I am excited."
 )
 EDUCATION = [  
